@@ -1,5 +1,7 @@
 import click
 import csv
+import os
+
 
 @click.command()
 @click.argument("command")
@@ -7,15 +9,18 @@ import csv
 
 def add(command: str, notes: str):
     try:    
-        with open('TempText.csv',mode='a') as file:
-            fieldnames = ['Command','Notes']
-            writer = csv.DictWriter(file,fieldnames)
-            writer.writerow({'Command': command, 'Notes': notes})
-    except:
-        print("Something failed")
 
+        payload = getCommandDescription(command)
+        
+        if payload[0]:
+            print("we deep")
+            with open('TempText.csv',mode='a') as file:
+                fieldnames = ['Command','Notes']
+                writer = csv.DictWriter(file,fieldnames)
+                writer.writerow({'Command': command, 'Notes': notes})
 
-
+    except Exception as e:
+        click.echo(e)
 
 
 
@@ -40,6 +45,47 @@ def show():
                 click.echo(f'{row['Command']} {row['Notes']}')
     except:
         click.echo("Something failed")
+
+
+def getCommandDescription(Command) -> tuple:
+    try:
+        description = os.popen(f"man {Command}").read()
+
+        if len(description)==0:
+            return (False, "")
+        else:
+            click.echo("success")
+            return (True, description)
+    except:
+       click.echo('something went bad')
+       return (False, "")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
