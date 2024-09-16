@@ -8,7 +8,6 @@ import os
 
 
 
-
 @click.command()
 @click.argument("command")
 @click.argument("notes")
