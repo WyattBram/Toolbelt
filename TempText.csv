@@ -1,1 +1,9 @@
-ls,helps
+ls,testing,"DESCRIPTION
+       List  information  about  the FILEs (the current directory by default).  Sort entries alphabeti‐"
+test,test,"DESCRIPTION
+       Exit with the status determined by EXPRESSION."
+test,test,"DESCRIPTION
+       Exit with the status determined by EXPRESSION."
+ls,test,"DESCRIPTION
+       List  information  about  the FILEs (the current directory by default).  Sort entries alphabeti‐
+       cally if none of -cftuvSUX nor --sort is specified."
