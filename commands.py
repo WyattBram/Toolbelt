@@ -2,6 +2,8 @@ import click
 import csv
 import os
 
+from click.utils import echo
+
 
 
 
@@ -114,7 +116,7 @@ def show() -> None:
 
 
 
-def descriptionHelper(Command):
+def descriptionHelper(Command: str) -> str:
     description = os.popen(f"man {Command}").read()
     script = description.find(f"DESCRIPTION")
     description = description[script:description.find("\n\n",script+12)]
@@ -142,10 +144,38 @@ def beautifyString(Command: str, Notes: str, Description: str) -> str:
 
 
 
+@click.command()
 
+def test() -> None:
+    score = 0
+    commands = 0
+    try:
+        with open('TempText.csv',newline='',mode='r') as file: 
+            fieldnames = ['Command','Notes','Description']
+            reader = csv.DictReader(file,fieldnames)
+            click.echo()
+            for row in reader:
+                command = row['Command'].strip('!')
+                commands+=1
+                click.echo(f'\n{row['Description'].replace(command, "xxx")}')
+                usrInput = input("Which command is this: ")
+                if usrInput == command:
+                    click.echo("Correct!")
+                    score+=1
+                else:
+                    click.echo(f"That is wrong, the right anwser is {command}")
+        if commands != 0:
+            percent = round(score/commands,1) *100
+            
+            if percent > 75:
+                affirmation = "You did Great"
+            else:
+                affirmation = "You need to study"
 
-
-
+        
+            click.echo(f'\nYou scored {score} out of {commands}, which is {percent}%, {affirmation}')
+    except:
+        click.echo("Something failed")
 
 
 

@@ -17,3 +17,5 @@ ls,test
 ls,test
 ls,test
 sl,test
+nvim,t
+ps,s
