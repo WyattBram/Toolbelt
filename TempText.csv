@@ -1,9 +1,6 @@
-ls,testing,"DESCRIPTION
-       List  information  about  the FILEs (the current directory by default).  Sort entries alphabeti‐"
-test,test,"DESCRIPTION
-       Exit with the status determined by EXPRESSION."
-test,test,"DESCRIPTION
-       Exit with the status determined by EXPRESSION."
-ls,test,"DESCRIPTION
+!ls!,test,"DESCRIPTION
        List  information  about  the FILEs (the current directory by default).  Sort entries alphabeti‐
        cally if none of -cftuvSUX nor --sort is specified."
+!sl!,test,"DESCRIPTION
+       sl  Displays  animations  aimed  to  correct  users who accidentally enter sl instead of ls.  SL
+       stands for Steam Locomotive."
