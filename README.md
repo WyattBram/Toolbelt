@@ -1,6 +1,6 @@
 # Toolbelt
 
-Toolbelt is a powerful command-line interface (CLI) tool designed to help users store terminal commands they frequently use but often forget.
+Toolbelt is a powerful command-line interface (CLI) tool designed to help users store terminal commands they frequently use but often forget. Users can easily save commands, show them all, or even take a test to help memorize commands making it perfect for both beginners and profesional developers
 ## Installation
 
 Use the package manager [pipx](https://pipx.pypa.io/stable/installation/) to install Toolbelt.
