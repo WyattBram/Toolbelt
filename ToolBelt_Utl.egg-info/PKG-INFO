@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ToolBelt-Utl
+Version: 0.1.1
+Summary: Cache commonly used commands
+Home-page: 
+Author: Wyatt Bramblett
+Author-email: wbramblett1@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Nothing here
