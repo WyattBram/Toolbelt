@@ -123,7 +123,7 @@ def test() -> None:
             if percent > 75:
                 affirmation = "You did Great!"
             else:
-                affirmation = "You dont know shit!"
+                affirmation = "Try Again Later"
 
         
             click.echo(f'\nYou scored {score} out of {commands}, which is {percent}%, {affirmation}')
